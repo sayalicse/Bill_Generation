@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Bill_Signin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <!-- Customer Name -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="40dp"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:text="Customer Name:"
+                android:textColor="@color/Black"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:id="@+id/customer_name"
+                android:hint="Enter Name"
+                android:textAlignment="center"
+                android:background="@android:drawable/editbox_background"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <!-- Mobile Number -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mobile Number:"
+                android:textColor="@color/Black"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp" />
+
+            <EditText
+                android:layout_width="260dp"
+                android:layout_marginLeft="5dp"
+                android:layout_height="50dp"
+                android:id="@+id/customer_mobile"
+                android:hint="Enter Mobile No"
+                android:textAlignment="center"
+                android:inputType="phone"
+                android:background="@android:drawable/editbox_background"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <!-- Vehicle Number -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vehicle Number:"
+                android:textColor="@color/Black"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp" />
+
+            <EditText
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:id="@+id/vehicle_no"
+                android:hint="Vehicle Number"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:background="@android:drawable/editbox_background"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <!-- Driver Name -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Driver Name:"
+                android:textColor="@color/Black"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp" />
+
+            <EditText
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:hint="Driver Name"
+                android:layout_marginLeft="24dp"
+                android:id="@+id/driver_name"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:background="@android:drawable/editbox_background"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <!-- Driver Mobile -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Driver Mobile:"
+
+                android:textColor="@color/Black"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp" />
+
+            <EditText
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:hint="Driver Mobile No"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/driver_mob"
+                android:inputType="phone"
+                android:textAlignment="center"
+                android:background="@android:drawable/editbox_background"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <!-- Material Type -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Material Type:"
+                android:textColor="@color/Black"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp" />
+
+            <EditText
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:hint="Material Type"
+                android:id="@+id/material"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:background="@android:drawable/editbox_background"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <!-- Quantity -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quantity:"
+                android:textColor="@color/Black"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp" />
+
+            <EditText
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="50dp"
+                android:id="@+id/quant"
+                android:hint="Quantity in TON/Brass"
+                android:inputType="numberDecimal"
+                android:textAlignment="center"
+                android:background="@android:drawable/editbox_background"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <!-- Amount Paid -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount Paid:"
+                android:textColor="@color/Black"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp" />
+
+            <EditText
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="25dp"
+                android:hint="Amount Paid"
+                android:id="@+id/amt_paid"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:background="@android:drawable/editbox_background"
+                android:padding="5dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Due Amount:"
+                android:textColor="@color/Black"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp" />
+
+            <EditText
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="25dp"
+                android:hint="Due Ammount"
+                android:id="@+id/due_amt"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:background="@android:drawable/editbox_background"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <!-- Delivery Location -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delivery Location:"
+                android:textColor="@color/Black"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp" />
+
+            <EditText
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:hint="Delivery location"
+                android:inputType="text"
+                android:id="@+id/delivery_loc"
+                android:textAlignment="center"
+                android:background="@android:drawable/editbox_background"
+                android:padding="5dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bill Validation:"
+                android:textColor="@color/Black"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp" />
+
+            <EditText
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="28dp"
+                android:hint="Enter Start Date"
+                android:id="@+id/bill_validate"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:background="@android:drawable/editbox_background"
+                android:padding="5dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bill Validation:"
+                android:textColor="@color/Black"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp" />
+
+            <EditText
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="28dp"
+                android:hint="Enter End Date"
+                android:id="@+id/bill_valid"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:background="@android:drawable/editbox_background"
+                android:padding="5dp" />
+        </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign In"
+            android:id="@+id/btn_signin"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="140dp"/>
+
+
+    </LinearLayout>
+
+</ScrollView>
