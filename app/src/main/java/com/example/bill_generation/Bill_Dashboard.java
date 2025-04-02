@@ -31,6 +31,14 @@ public class Bill_Dashboard extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        customer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Bill_Dashboard.this,Customer_bill.class);
+                startActivity(intent);
+
+            }
+        });
         bill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

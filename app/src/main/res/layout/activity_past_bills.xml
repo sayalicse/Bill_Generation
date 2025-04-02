@@ -3,23 +3,73 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Wrap the existing LinearLayout inside ScrollView -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_marginTop="50dp"
         android:padding="16dp">
 
-        <!-- FIR ID Search Bar -->
+        <!-- From Date -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#070707"
+            android:textStyle="bold"
+            android:text="From Date:" />
 
+        <TextView
+            android:id="@+id/StartDate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:hint="Select From Date"
+            android:focusable="false"
+            android:clickable="true"
+            android:background="@drawable/custom_datebackground"
+            android:drawableEnd="@drawable/calendar"
+            android:paddingEnd="10dp"/>
 
-        <!-- FrameLayout to center the ProgressBar -->
+        <!-- To Date -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="#090909"
+            android:textStyle="bold"
+            android:text="To Date:" />
+
+        <TextView
+            android:id="@+id/EndDate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:padding="10dp"
+            android:hint="Select To Date"
+            android:background="@drawable/custom_datebackground"
+            android:focusable="false"
+            android:clickable="true"
+            android:drawableEnd="@drawable/calendar"
+            android:paddingEnd="10dp"/>
+
+        <!-- Search Button -->
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp" />
+
+        <!-- Progress Bar (Centered) -->
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp">
+            android:layout_marginTop="20dp">
 
-            <!-- Progress Bar (Centered) -->
             <ProgressBar
                 android:id="@+id/billprogressb"
                 android:layout_width="wrap_content"
@@ -37,5 +87,3 @@
 
     </LinearLayout>
 </ScrollView>
-
-

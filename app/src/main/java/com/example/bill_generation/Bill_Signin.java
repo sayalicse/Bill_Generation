@@ -21,7 +21,7 @@ import java.net.URLEncoder;
 
 public class Bill_Signin extends AppCompatActivity {
     EditText customer_name, mobile_number, vehicle_number, driver_name, driver_mobile, material_type, quantity, amount_paid,due_amount, delivery_location, bill_validationstart,bill_validationend;
-    Button signin;
+    Button signin,pdf;
     RequestQueue requestQueue;
 //    ProgressBar progressBar;
 
@@ -45,6 +45,7 @@ public class Bill_Signin extends AppCompatActivity {
         bill_validationstart = findViewById(R.id.bill_validate);
         bill_validationend = findViewById(R.id.bill_valid);
         signin = findViewById(R.id.btn_signin);
+        pdf=findViewById(R.id.btn_pdf);
          // Ensure you have a ProgressBar in XML
 
         // Initialize RequestQueue
@@ -78,6 +79,26 @@ public class Bill_Signin extends AppCompatActivity {
                 }
             }
         });
+        pdf.setOnClickListener(view -> {
+            Intent intent = new Intent(Bill_Signin.this, Bill_PDF.class);
+
+            // Pass bill data
+            intent.putExtra("customer_name", customer_name.getText().toString().trim());
+            intent.putExtra("mobile_number", mobile_number.getText().toString().trim());
+            intent.putExtra("vehicle_number", vehicle_number.getText().toString().trim());
+            intent.putExtra("driver_name", driver_name.getText().toString().trim());
+            intent.putExtra("driver_mobile", driver_mobile.getText().toString().trim());
+            intent.putExtra("material_type", material_type.getText().toString().trim());
+            intent.putExtra("quantity", quantity.getText().toString().trim());
+            intent.putExtra("amount_paid", amount_paid.getText().toString().trim());
+            intent.putExtra("due_amount", due_amount.getText().toString().trim());
+            intent.putExtra("delivery_location", delivery_location.getText().toString().trim());
+            intent.putExtra("bill_validation_start", bill_validationstart.getText().toString().trim());
+            intent.putExtra("bill_validation_end", bill_validationend.getText().toString().trim());
+
+            startActivity(intent);
+        });
+
     }
 
     private void Bill_Generate(String cname, String cmobile, String vnumber, String dname, String dmobile, String mtype,

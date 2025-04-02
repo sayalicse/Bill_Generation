@@ -1,9 +1,12 @@
 package com.example.bill_generation;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -18,8 +21,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -30,6 +36,10 @@ public class Past_Bills extends AppCompatActivity {
     private Bill_Adapter billAdapter;
     private List<modelviewbill> billModels;
     private ProgressBar progressBar;
+    TextView textStartDate, textEndDate;
+    String selectedEndDate = "", selectedStartDate = "";
+    Button btn;
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,18 +47,59 @@ public class Past_Bills extends AppCompatActivity {
         setContentView(R.layout.activity_past_bills);
         recyclerView = findViewById(R.id.billview);
         progressBar = findViewById(R.id.billprogressb);
+        textStartDate=findViewById(R.id.StartDate);
+        textEndDate=findViewById(R.id.EndDate);
+        btn = findViewById(R.id.btnSearch);
 
 
         billModels = new ArrayList<>();
         recyclerView.setLayoutManager(new LinearLayoutManager(Past_Bills.this));
-
+        textStartDate.setOnClickListener(view1 -> openDatePicker1());
+        textEndDate.setOnClickListener(view1 -> openDatePicker2());
         // Initialize adapter with empty list
         billAdapter = new Bill_Adapter(Past_Bills.this, billModels);
         recyclerView.setAdapter(billAdapter);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fetchbilldata();
+            }
+        });
 
-        fetchbilldata();
+
 
     }
+
+    private void openDatePicker2() {
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        DatePickerDialog dialog = new DatePickerDialog(Past_Bills.this, (datePicker, year1, month1, day1) -> {
+            Calendar selectedCalendar = Calendar.getInstance();
+            selectedCalendar.set(year1, month1, day1);
+
+            selectedEndDate = dateFormat.format(selectedCalendar.getTime());
+            textEndDate.setText(selectedEndDate);
+        }, year, month, day);
+        dialog.show();
+    }
+
+    private void openDatePicker1() {
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        DatePickerDialog dialog = new DatePickerDialog(Past_Bills.this, (datePicker, year1, month1, day1) -> {
+            Calendar selectedCalendar = Calendar.getInstance();
+            selectedCalendar.set(year1, month1, day1);
+
+            selectedStartDate = dateFormat.format(selectedCalendar.getTime());
+            textStartDate.setText(selectedStartDate);
+        }, year, month, day);
+        dialog.show();
+    }
+
     private void fetchbilldata() {
         // Show progress bar before starting data fetch
         progressBar.setVisibility(View.VISIBLE);
